@@ -1,3 +1,4 @@
-## 1.0.0
+## 0.0.0
 
-- Initial version.
+- Initial version with basic configurations.
+- Iterables (List and Set) all to string.
