@@ -1,5 +1,5 @@
 name: syntax_sugar
-description: A starting point for Dart libraries or applications.
+description: A utilities library containing useful tools and syntax sugars.
 version: 0.0.0
 # repository: https://github.com/my_org/my_repo
 
