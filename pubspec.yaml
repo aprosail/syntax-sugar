@@ -2,9 +2,7 @@ name: syntax_sugar
 description: A utilities library containing useful tools and syntax sugars.
 version: 0.0.0
 # repository: https://github.com/my_org/my_repo
-
-environment:
-  sdk: ^3.3.4
+environment: {sdk: ^3.3.4}
 
 dev_dependencies:
   lints: ^3.0.0
