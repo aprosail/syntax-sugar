@@ -2,6 +2,7 @@
 
 - regexp chain and matrix.
 - generate regexp from iterable of strings.
+- docs about iterable performance.
 
 ## 0.1.0
 
