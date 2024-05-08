@@ -1,0 +1,7 @@
+name: review
+
+on:
+  push: {branches: ["main", "dev"]}
+  pull_request: {branches: ["main", "dev"]}
+
+jobs: {review: {uses: aprosail/workflows/shared/dart-review.yaml@main}}
