@@ -1,7 +1,9 @@
 extension SetAllToString on Set {
   Set allToString() {
     final handler = <String>{};
-    for (final item in this) handler.add(item.toString());
+    for (final item in this) {
+      handler.add(item.toString());
+    }
     return handler;
   }
 }
