@@ -2,6 +2,7 @@
 
 - fix use generics on iterable all to string.
 - nullable max of `num`s.
+- github workflow to publish.
 
 ## 0.0.0
 
