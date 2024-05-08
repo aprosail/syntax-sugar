@@ -1,8 +1,8 @@
-extension SetAllToString on Set {
-  Set allToString() =>
-      List.generate(length, (i) => toList()[i].toString()).toSet();
-}
+extension AllToString<T> on Iterable<T> {
+  Set<String> toStringSet() => toStringList().toSet();
 
-extension ListAllToString on List {
-  List allToString() => List.generate(length, (i) => this[i].toString());
+  List<String> toStringList() {
+    final linearList = toList(growable: false);
+    return List.generate(length, (i) => linearList[i].toString());
+  }
 }
