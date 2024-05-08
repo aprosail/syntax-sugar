@@ -1,11 +1,6 @@
 extension SetAllToString on Set {
-  Set allToString() {
-    final handler = <String>{};
-    for (final item in this) {
-      handler.add(item.toString());
-    }
-    return handler;
-  }
+  Set allToString() =>
+      List.generate(length, (i) => toList()[i].toString()).toSet();
 }
 
 extension ListAllToString on List {
