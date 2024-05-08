@@ -16,6 +16,6 @@ extension MatchOneOf on String {
   RegExpMatch? matchFirstOf(Iterable<String> items) => matchFirst(items.regexp);
 
   /// Match all of any of the strings in the [items] in this string.
-  Iterable<RegExpMatch> matchOneOf(Iterable<String> items) =>
+  Iterable<RegExpMatch> matchAnyOf(Iterable<String> items) =>
       matchAll(items.regexp);
 }
