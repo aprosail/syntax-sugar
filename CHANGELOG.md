@@ -1,8 +1,12 @@
-## 0.2.1
+## 0.2.2
 
 - fix regexp bug of duplicate brackets.
 - doc iterable lazy.
 - test iterable regexp.
+
+## 0.2.1
+
+- retracted because of unnecessary and deprecated code.
 
 ## 0.2.0
 
