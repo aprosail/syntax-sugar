@@ -1,3 +1,7 @@
+## 0.2.4
+
+- fix `matchIndexOf` bugs: don't wrap regexp on non-iterable.
+
 ## 0.2.3
 
 - enhance `indexOf` and `lastIndexOf` of `String`: enable any type.

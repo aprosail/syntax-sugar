@@ -21,17 +21,14 @@ void main() {
       expect(<RegExpMatch>[].toString(), '[]');
       expect(<RegExpMatch>{}.toString(), '{}');
       expect('this is list []'.matchIndexOf([]), 13);
-      expect('this is set {}'.matchIndexOf(<int>{}), 12);
+      expect('this is set {}'.matchIndexOf({}), 12);
       expect('this is list []'.matchLastIndexOf([]), 13);
-      expect('this is set {}'.matchLastIndexOf(<int>{}), 12);
-
-      // "{}" can either be a set or a map.
-      expect('this is set {}'.matchIndexOf({}), -1);
-      expect('this is set {}'.matchLastIndexOf({}), -1);
+      expect('this is set {}'.matchLastIndexOf({}), 12);
     });
 
     test('match index of', () {
       expect('abcdef'.matchIndexOf('bc'), 1);
+      expect('\x1b[1m bold \x1b[0m'.matchIndexOf('\x1b[1m'), 0);
       expect('this is true'.matchIndexOf(true), 8);
       expect('abcdef'.matchIndexOf({'bc', 123, true, 'de'}), 1);
       expect('abcdef'.matchIndexOf({'bc', 123, true, 'de'}, 2), 3);
@@ -39,6 +36,7 @@ void main() {
 
     test('match last index of', () {
       expect('abcdef'.matchLastIndexOf('bc'), 1);
+      expect('\x1b[1m bold \x1b[0m'.matchLastIndexOf('\x1b[1m'), 0);
       expect('this is true'.matchLastIndexOf(true), 8);
       expect('abcdef'.matchLastIndexOf({'bc', 123, true, 'de'}), 3);
       expect('abcdef'.matchLastIndexOf({'bc', 123, true, 'de'}, 2), 1);

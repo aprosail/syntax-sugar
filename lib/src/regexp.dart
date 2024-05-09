@@ -46,7 +46,7 @@ extension MatchIndexOf on String {
       ? match.isNotEmpty
           ? indexOf(match.toSet().regexp, start)
           : indexOf(match.toString())
-      : indexOf(RegExp.escape(match.toString()), start);
+      : indexOf(match.toString(), start);
 
   /// Same as [lastIndexOf], but the parameter can be any type.
   ///
@@ -60,5 +60,5 @@ extension MatchIndexOf on String {
       ? match.isNotEmpty
           ? lastIndexOf(match.toSet().regexp, start)
           : lastIndexOf(match.toString())
-      : lastIndexOf(RegExp.escape(match.toString()), start);
+      : lastIndexOf(match.toString(), start);
 }
