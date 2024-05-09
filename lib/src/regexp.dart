@@ -32,3 +32,23 @@ extension MatchOneOf on String {
   /// it will not match the whole string to avoid waste.
   Iterable<RegExpMatch> matchAllOf(Set items) => matchAll(items.regexp);
 }
+
+extension MatchIndexOf on String {
+  /// Same as [indexOf], but the parameter can be any type.
+  ///
+  /// If the parameter is an iterable, it will match any item inside,
+  /// and all non-string item will be converted to string using [toString].
+  /// Otherwise, it will match the string of the parameter (also [toString]).
+  int matchIndexOf(Object? match, [int start = 0]) => match is Iterable
+      ? indexOf(match.toSet().regexp, start)
+      : indexOf(RegExp.escape(match.toString()), start);
+
+  /// Same as [lastIndexOf], but the parameter can be any type.
+  ///
+  /// If the parameter is an iterable, it will match any item inside,
+  /// and all non-string item will be converted to string using [toString].
+  /// Otherwise, it will match the string of the parameter (also [toString]).
+  int matchLastIndexOf(Object? match, [int? start]) => match is Iterable
+      ? lastIndexOf(match.toSet().regexp, start)
+      : lastIndexOf(RegExp.escape(match.toString()), start);
+}

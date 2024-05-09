@@ -1,3 +1,7 @@
+## 0.2.3
+
+- enhance `indexOf` and `lastIndexOf` of `String`: enable any type.
+
 ## 0.2.2
 
 - fix regexp bug of duplicate brackets.
