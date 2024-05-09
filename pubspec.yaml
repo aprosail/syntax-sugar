@@ -1,6 +1,6 @@
 name: syntax_sugar
 description: A utilities library containing useful tools and syntax sugars.
-version: 0.2.0
+version: 0.3.0
 repository: https://github.com/aprosail/syntax-sugar
 environment: {sdk: ^3.3.4}
 

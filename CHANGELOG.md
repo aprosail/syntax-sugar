@@ -1,3 +1,7 @@
+## 0.3.0
+
+- string modify chain.
+
 ## 0.2.0
 
 - regexp chain and matrix.
