@@ -1,6 +1,7 @@
 ## 0.2.3
 
 - enhance `indexOf` and `lastIndexOf` of `String`: enable any type.
+- fix resolve condition if the any type is an empty iterable.
 
 ## 0.2.2
 

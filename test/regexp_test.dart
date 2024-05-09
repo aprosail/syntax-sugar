@@ -17,6 +17,19 @@ void main() {
   });
 
   group('match index of', () {
+    test('resolve empty iterable', () {
+      expect(<RegExpMatch>[].toString(), '[]');
+      expect(<RegExpMatch>{}.toString(), '{}');
+      expect('this is list []'.matchIndexOf([]), 13);
+      expect('this is set {}'.matchIndexOf(<int>{}), 12);
+      expect('this is list []'.matchLastIndexOf([]), 13);
+      expect('this is set {}'.matchLastIndexOf(<int>{}), 12);
+
+      // "{}" can either be a set or a map.
+      expect('this is set {}'.matchIndexOf({}), -1);
+      expect('this is set {}'.matchLastIndexOf({}), -1);
+    });
+
     test('match index of', () {
       expect('abcdef'.matchIndexOf('bc'), 1);
       expect('this is true'.matchIndexOf(true), 8);

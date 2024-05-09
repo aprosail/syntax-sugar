@@ -39,8 +39,13 @@ extension MatchIndexOf on String {
   /// If the parameter is an iterable, it will match any item inside,
   /// and all non-string item will be converted to string using [toString].
   /// Otherwise, it will match the string of the parameter (also [toString]).
+  ///
+  /// If the parameter is an empty iterable, then it will match
+  /// the empty iterable to string, using "[]" or "{}" as the pattern.
   int matchIndexOf(Object? match, [int start = 0]) => match is Iterable
-      ? indexOf(match.toSet().regexp, start)
+      ? match.isNotEmpty
+          ? indexOf(match.toSet().regexp, start)
+          : indexOf(match.toString())
       : indexOf(RegExp.escape(match.toString()), start);
 
   /// Same as [lastIndexOf], but the parameter can be any type.
@@ -48,7 +53,12 @@ extension MatchIndexOf on String {
   /// If the parameter is an iterable, it will match any item inside,
   /// and all non-string item will be converted to string using [toString].
   /// Otherwise, it will match the string of the parameter (also [toString]).
+  ///
+  /// If the parameter is an empty iterable, then it will match
+  /// the empty iterable to string, using "[]" or "{}" as the pattern.
   int matchLastIndexOf(Object? match, [int? start]) => match is Iterable
-      ? lastIndexOf(match.toSet().regexp, start)
+      ? match.isNotEmpty
+          ? lastIndexOf(match.toSet().regexp, start)
+          : lastIndexOf(match.toString())
       : lastIndexOf(RegExp.escape(match.toString()), start);
 }

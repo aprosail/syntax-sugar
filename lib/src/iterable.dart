@@ -14,9 +14,17 @@ extension AllToString<T> on Iterable<T> {
 extension RegexpMatchOneOf on Set {
   /// Generate a regular expression that any item inside this set.
   ///
-  /// Attention that if an item in that set is not a string,
+  /// Attention that the set must not be empty,
+  /// or the regexp will be invalid.
+  /// (a blank bracket will match everything as empty match in the regexp rule)
+  /// If the regexp might be empty, consider using [regexpOrEmpty] instead.
+  /// Because there's no exception but only an assert here
+  /// in order to improve performance.
+  ///
+  /// If an item in that set is not a string,
   /// it will be converted to string by [toString].
   RegExp get regexp {
+    assert(isNotEmpty, 'set cannot be empty when generating regexp');
     final linearList = toList(growable: false);
     final escaped = List.generate(
       length,
@@ -24,4 +32,7 @@ extension RegexpMatchOneOf on Set {
     );
     return RegExp('(${escaped.join('|')})');
   }
+
+  /// If the set is empty, return null. Otherwise, call [regexp] getter.
+  RegExp? get regexpOrEmpty => isEmpty ? null : regexp;
 }
