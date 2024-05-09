@@ -7,15 +7,28 @@ extension RegexpMatchChain on String {
 
   RegExpMatch? matchFirst(RegExp regexp) => regexp.firstMatch(this);
 
+  /// Attention that the iterable will be lazy evaluated.
   Iterable<RegExpMatch> matchAll(RegExp regexp, [int start = 0]) =>
       regexp.allMatches(this, start);
 }
 
 extension MatchOneOf on String {
-  /// Match the first of any of the strings in the [items] in this string.
-  RegExpMatch? matchFirstOf(Iterable<String> items) => matchFirst(items.regexp);
+  /// Match the first of any item in the set.
+  ///
+  /// Attention that any item not a string will be converted to string.
+  /// Because regular expression will only work on string.
+  /// The conversion will be done by [toString] method.
+  RegExpMatch? matchFirstOf(Set items) => matchFirst(items.regexp);
 
-  /// Match all of any of the strings in the [items] in this string.
-  Iterable<RegExpMatch> matchAnyOf(Iterable<String> items) =>
-      matchAll(items.regexp);
+  /// Match any of the items in the set.
+  ///
+  /// Attention that any item not a string will be converted to string.
+  /// Because regular expression will only work on string.
+  /// The conversion will be done by [toString] method.
+  ///
+  /// Attention that the iterable will be lazy evaluated.
+  /// So you can use it in a for loop.
+  /// When you just call the first one of the result,
+  /// it will not match the whole string to avoid waste.
+  Iterable<RegExpMatch> matchAllOf(Set items) => matchAll(items.regexp);
 }

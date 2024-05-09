@@ -11,12 +11,17 @@ extension AllToString<T> on Iterable<T> {
   }
 }
 
-extension RegexpMatchOneOf on Iterable<String> {
-  /// Generate a regular expression that
-  /// matches any of the strings in the iterable.
+extension RegexpMatchOneOf on Set {
+  /// Generate a regular expression that any item inside this set.
+  ///
+  /// Attention that if an item in that set is not a string,
+  /// it will be converted to string by [toString].
   RegExp get regexp {
     final linearList = toList(growable: false);
-    final escaped = List.generate(length, (i) => RegExp.escape(linearList[i]));
-    return RegExp('(${escaped.join('|')}})');
+    final escaped = List.generate(
+      length,
+      (i) => RegExp.escape(linearList[i].toString()),
+    );
+    return RegExp('(${escaped.join('|')})');
   }
 }
