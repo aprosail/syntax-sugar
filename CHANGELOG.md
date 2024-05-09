@@ -1,3 +1,9 @@
+## 0.2.1
+
+- fix regexp bug of duplicate brackets.
+- doc iterable lazy.
+- test iterable regexp.
+
 ## 0.2.0
 
 - regexp chain and matrix.
