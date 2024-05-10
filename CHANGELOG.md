@@ -1,6 +1,7 @@
 ## 0.2.5
 
-- Satisfy all and satisfy any to match iterable conditions.
+- `satisfyAll` and `satisfyAny` to match iterable conditions
+  and improve performance over `any` and `where` method of `Iterable`.
 
 ## 0.2.4
 
