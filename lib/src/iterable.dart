@@ -38,7 +38,17 @@ extension RegexpMatchOneOf on Set {
 }
 
 /// Satisfy any of the conditions, and it wll return true.
-bool satisfyAny(Iterable<bool> conditions) => conditions.any((e) => e);
+bool satisfyAny(Iterable<bool> conditions) {
+  for (final condition in conditions) {
+    if (condition) return true;
+  }
+  return false;
+}
 
 /// Satisfy all of the conditions, and it wll return true.
-bool satisfyAll(Iterable<bool> conditions) => conditions.every((e) => e);
+bool satisfyAll(Iterable<bool> conditions) {
+  for (final condition in conditions) {
+    if (!condition) return false;
+  }
+  return true;
+}
