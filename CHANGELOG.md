@@ -1,3 +1,7 @@
+## 0.2.5
+
+- satisfy all and satisfy any to match iterable conditions.
+
 ## 0.2.4
 
 - fix `matchIndexOf` bugs: don't wrap regexp on non-iterable.

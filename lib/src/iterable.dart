@@ -36,3 +36,9 @@ extension RegexpMatchOneOf on Set {
   /// If the set is empty, return null. Otherwise, call [regexp] getter.
   RegExp? get regexpOrEmpty => isEmpty ? null : regexp;
 }
+
+/// Satisfy any of the conditions, and it wll return true.
+bool satisfyAny(Set<bool> conditions) => conditions.any((element) => element);
+
+/// Satisfy all of the conditions, and it wll return true.
+bool satisfyAll(Set<bool> conditions) => conditions.every((element) => element);
