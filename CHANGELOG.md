@@ -1,39 +1,39 @@
 ## 0.2.5
 
-- satisfy all and satisfy any to match iterable conditions.
+- Satisfy all and satisfy any to match iterable conditions.
 
 ## 0.2.4
 
-- fix `matchIndexOf` bugs: don't wrap regexp on non-iterable.
+- Fix `matchIndexOf` bugs: don't wrap regexp on non-iterable.
 
 ## 0.2.3
 
-- enhance `indexOf` and `lastIndexOf` of `String`: enable any type.
-- fix resolve condition if the any type is an empty iterable.
+- Enhance `indexOf` and `lastIndexOf` of `String`: enable any type.
+- Fix resolve condition if the any type is an empty iterable.
 
 ## 0.2.2
 
-- fix regexp bug of duplicate brackets.
-- doc iterable lazy.
-- test iterable regexp.
+- Fix regexp bug of duplicate brackets.
+- Doc iterable lazy.
+- Test iterable regexp.
 
 ## 0.2.1
 
-- retracted because of unnecessary and deprecated code.
+- Retracted because of unnecessary and deprecated code.
 
 ## 0.2.0
 
-- regexp chain and matrix.
-- generate regexp from iterable of strings.
-- docs about iterable performance.
+- Regexp chain and matrix.
+- Generate regexp from iterable of strings.
+- Docs about iterable performance.
 
 ## 0.1.0
 
-- fix use generics on iterable all to string.
-- nullable max of `num`s.
-- github workflow to publish.
+- Fix use generics on iterable all to string.
+- Nullable max of `num`s.
+- GitHub workflow to publish.
 
 ## 0.0.0
 
-- initial version with basic configurations.
-- iterables (List and Set) all to string.
+- Initial version with basic configurations.
+- Iterables (List and Set) all to string.
